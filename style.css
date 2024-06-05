@@ -80,7 +80,7 @@
     border-radius: 8px;
 }
 
-.todo p{
+.todo input{
     width: 100%;
     border: none;
     outline: none;

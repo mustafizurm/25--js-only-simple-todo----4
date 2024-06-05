@@ -20,14 +20,18 @@ addTaskBtn.addEventListener("click", () => {
   todos.forEach((todo) => {
     todosContainer.innerHTML += `
      <div class="todo">
-        <p class="title">${todo.plan}</p>
-        <button>Edit</button>
+        <input class="title" type="text" value="${todo.plan}" readonly>
+        <button class="editBtn">Edit</button>
         <button class="deleteBtn">Delete</button>
     </div> 
     
     
     `;
   });
+
+
+
+
 
   // deleteBtn
 
@@ -37,19 +41,43 @@ addTaskBtn.addEventListener("click", () => {
     dbtn.addEventListener("click", (e) => {
       const todo = e.target.parentElement;
 
-      const tag = todo.querySelector(".title").innerHTML;
+      const tag = todo.querySelector(".title").value;
 
-      todos = todos.filter((p) => {
-        return p.plan !== tag;
-      });
+      todos = todos.filter((p) => p.plan !== tag);
+
+      console.log(todos);
 
       todo.remove();
     });
   });
+
+
+  // editbtn
+
+  const editBtns = document.querySelectorAll(".editBtn")
+
+  editBtns.forEach((ebtn)=>{
+    ebtn.addEventListener("click", (e)=>{
+       const parentElement = e.target.parentElement;
+       const tag = parentElement.querySelector(".title")
+
+       if(ebtn.innerText == "Edit"){
+        tag.removeAttribute("readonly")
+        tag.focus()
+        ebtn.innerText = "Save"
+       } else{
+        tag.setAttribute("readonly", "readonly");
+        ebtn.innerText = "Edit";
+       }
+
+    })
+  })
+
+
+
+
+
 });
-
-
-
 
 
 
