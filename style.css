@@ -1,0 +1,121 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+	--dark: #374151;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--pink: #EC4899;
+	--purple: #8B5CF6;
+	--light: #EEE;
+}
+
+.todos-container{
+    padding: 60px 400px;
+    background-color: var(--dark);
+    height: 100vh;
+}
+
+.todos-header h3{
+    font-size: 31px;
+    color: white;
+    word-spacing: 1px;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+}
+
+.search-box{
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+}
+
+.search-box input{
+    padding: 9px;
+    border-radius: 9px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: var(--darkest);
+    color: white;
+    padding-left: 15px;
+}
+
+.search-box button{
+    border: none;
+    outline: none;
+    background: transparent;
+    /* background-image: linear-gradient(to right, var(--pink), var(--purple)); */
+    color: var(--pink);
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+}
+
+.todos-parent{
+    margin-top: 40px;
+}
+
+.todos-parent h4{
+    font-size: 20px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.todos-parent .todos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.todos-parent .todo{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 7fr 1fr 1fr;
+    background-color: var(--darker);
+    border-radius: 8px;
+}
+
+.todo p{
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    padding: 8px;
+    padding-left: 15px;
+}
+
+.todo button{
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1334px) {
+    .todos-container{
+        padding: 60px 200px;
+    }
+}
+
+@media screen and (max-width:921px) {
+    .todos-container{
+        padding: 60px 100px;
+        display: flex;
+        column-gap: 10px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:629px) {
+    .todos-container{
+        padding: 60px 50px;
+    }
+}
